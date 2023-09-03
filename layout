@@ -1,0 +1,71 @@
+MainActivity.java
+
+import android.support.v4.view.GestureDetectorCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.widget.Toast;
+public class MainActivity extends AppCompatActivity {
+private GestureDetectorCompat mGestureDetector;
+private class GestureListener extends
+ GestureDetector.SimpleOnGestureListener {
+ @Override
+public boolean onSingleTapConfirmed(MotionEvent e) {
+Toast.makeText(MainActivity.this,
+ "onSingleTapConfirmed",
+ Toast.LENGTH_SHORT).show();
+setContentView(R.layout.layoutone);
+return super.onSingleTapConfirmed(e);
+ }
+ @Override
+public boolean onDoubleTap(MotionEvent e) {
+Toast.makeText(MainActivity.this, "onDoubleTap",
+ Toast.LENGTH_SHORT).show();
+setContentView(R.layout.linearlayout);
+return super.onDoubleTap(e);
+ }
+ }
+public boolean onTouchEvent(MotionEvent event) {
+mGestureDetector.onTouchEvent(event);
+return super.onTouchEvent(event);
+ }
+ @Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+mGestureDetector = new GestureDetectorCompat(this, new
+GestureListener());
+ }
+}
+Linearlayout.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayoutandroid:layout_height="wrap_content" android:orientation="vertical" 
+android:layout_width="match_parent" 
+xmlns:android="http://schemas.android.com/apk/res/android"><Buttonandroid:layout_height="wrap_con
+tent" android:layout_width="match_parent" android:text="Button" android:layout_weight="1" 
+android:id="@+id/button2"/><Buttonandroid:layout_height="wrap_content" 
+android:layout_width="match_parent" android:text="Button" android:layout_weight="1" 
+android:id="@+id/button"/></LinearLayout>
+Layoutone.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<TableLayoutandroid:stretchColumns="1" android:layout_height="match_parent" 
+android:layout_width="match_parent" 
+xmlns:android="http://schemas.android.com/apk/res/android"><TableRow><TextViewandroid:padding=
+"3dip" android:text="Open"/><TextViewandroid:padding="3dip" android:text="Short cut" 
+android:gravity="right"/></TableRow><TableRow><TextViewandroid:padding="3dip" 
+android:text="SAVE"/><TextViewandroid:padding="3dip" android:text="SAve Short Cut" 
+android:gravity="right"/></TableRow></TableLayout>
+
+Activity_main.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+-<android.support.constraint.ConstraintLayout tools:context=".MainActivity" 
+android:layout_height="match_parent" android:layout_width="match_parent" 
+xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" 
+xmlns:android="http://schemas.android.com/apk/res/android">
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" 
+app:layout_constraintTop_toTopOf="parent" app:layout_constraintRight_toRightOf="parent" 
+app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintBottom_toBottomOf="parent" 
+android:text="Hello World!"/>
+</android.support.constraint.ConstraintLayout>
