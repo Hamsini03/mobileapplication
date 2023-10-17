@@ -47,7 +47,9 @@ tent" android:layout_width="match_parent" android:text="Button" android:layout_w
 android:id="@+id/button2"/><Buttonandroid:layout_height="wrap_content" 
 android:layout_width="match_parent" android:text="Button" android:layout_weight="1" 
 android:id="@+id/button"/></LinearLayout>
+
 Layoutone.xml
+
 <?xml version="1.0" encoding="UTF-8"?>
 <TableLayoutandroid:stretchColumns="1" android:layout_height="match_parent" 
 android:layout_width="match_parent" 
