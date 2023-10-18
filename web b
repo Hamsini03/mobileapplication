@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Exercise 2a.ii </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var n = prompt("Enter positive value for n: ", " ");
+        while (n <= 0) {
+            alert("Enter positive value");
+            n = prompt("Enter positive value for n: ", " ");
+        }
+        document.write("Numbers and their square values displayed using alert ..<br />");
+        for (i = 1; i <= n; i++) {
+            document.write("The Square of  " + i + " is " + (i * i) + "<br/>");
+            alert("The Square of  " + i + " is " + (i * i) + "<br/>");
+        }
+    </script>
+</body>
+
+</html>
