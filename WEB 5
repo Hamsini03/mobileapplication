@@ -1,0 +1,56 @@
+<html>
+<head><title>onfocus_events</title>
+<script type="text/javascript" >
+function computecost()
+ {
+ var nb1 = document.getElementById("French").value;
+ var nb2 = document.getElementById("hazelnut").value;
+ var nb3 = document.getElementById("Columbian").value;
+ var nb4 = (nb1 * 3.49) + (nb2 * 5.40)+ (nb3 * 6.20);
+ document.getElementById("cost").value = nb4;
+ }
+</script>
+</head>
+<body onload="myFunction()">
+<script>
+function myFunction() {
+ alert("Onload Event!");
+}
+function color1(x) {
+ x.style.background = "yellow";
+}
+</script>
+<form action=" ">
+<h3>Coffee Order Form</h3>
+<table border="border">
+<tr>
+<th>Product name</th>
+<th>Price</th>
+<th>Quantity</th>
+</tr>
+<tr>
+<th>French vanilla</th>
+<td>Rs.3.49</td>
+<td><input type="text" id="French" size="2"/></td>
+</tr>
+<tr>
+<th>Hazelnut cream</th>
+<td>Rs.5.40</td>
+<td><input type="text" id="hazelnut" size="2" onfocus="color1(this)"/></td>
+</tr><tr>
+<th>Columbian</th>
+<td>Rs.6.20</td>
+<td><input type="text" id="Columbian" size="2"/></td>
+</tr>
+</table>
+<p>
+<input type="button" value="Total cost" onmousemove="computecost()";/>
+<input text="text" size="5" id="cost" onfocus="this.blur()";/>
+</p>
+<p>
+<input type="button" value="Submit order" onClick="computecost()";/>
+<input type="reset" value="Reset order"/>
+</p>
+</form>
+</body>
+</html>
