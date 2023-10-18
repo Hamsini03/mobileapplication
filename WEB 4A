@@ -1,0 +1,56 @@
+<html>
+<head><title>Exercise 4a & b </title>
+<script type="text/javascript">
+function chkusn() {	
+ var myusn=document.getElementById("usn");
+	
+ var pos=myusn.value.search(/^[1-4][A-Z][A-Z]\d{2}[A-Z][A-Z]\d{3}$/);	
+if(myusn.value== "")
+ {
+alert("Enter the USN.");
+myusn.focus();
+return false;
+} 
+if(pos != 0) {
+alert("The format of the USN is not correct.");
+myusn.focus();
+myusn.select();
+return false;
+} else
+return true;
+}
+function chksem() {
+var mysem=document.getElementById("sem");	
+var pos=mysem.value.search(/^[1-4]$/);
+if(mysem.value== "") 
+{
+alert("Enter the SEM value.");
+mysem.focus();
+return false;
+} 
+if(pos != 0) {
+alert("Enter values 1 to 4 for semester.");
+mysem.focus();
+mysem.select();
+return false;
+} else
+return true;
+}
+</script>
+</head>
+<body >
+
+<h3> Validation Example </h3><br /><br />
+<p> Example to check the format of the data entered in the text box </p><br /><br /><br />
+<form  action=" ">
+<p>	USN : 	<input type="text" id="usn"  /><br /><br />
+	SEM :	<input type="text" id="sem"  /><br /><br /><br />
+ 	<input type="submit" id="submit" value="Submit" />
+</p>
+</form>
+<script type="text/javascript">
+document.getElementById("usn").onchange=chkusn;
+document.getElementById("sem").onchange=chksem;			
+</script>
+</body>
+</html>
