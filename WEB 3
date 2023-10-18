@@ -1,0 +1,44 @@
+<html>
+
+<body>
+    <script>
+        function genRanNum(n) {
+            const randomNumbers = Array.from({ length: n }, () => Math.floor(Math.random() * n));
+            return randomNumbers;
+        }
+
+        function findMean(numbers) {
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            return sum / numbers.length;
+        }
+
+        function findMedian(numbers) {
+            const sortedNumbers = numbers.slice().sort((a, b) => a - b);
+            const middleIndex = Math.floor(sortedNumbers.length / 2);
+
+            if (sortedNumbers.length % 2 == 0) {
+                return (sortedNumbers[middleIndex - 1] + sortedNumbers[middleIndex]) / 2;
+            } else {
+                return sortedNumbers[middleIndex];
+            }
+        }
+
+        const n = 10; // Change this to the desired number of random numbers
+
+        const randomNumbers = genRanNum(n);
+        const sortedNumbers = randomNumbers.slice().sort((a, b) => a - b);
+
+        const mean = findMean(sortedNumbers);
+        const median = findMedian(sortedNumbers);
+
+        document.write(`Generated Random Numbers: ${randomNumbers}`);
+        document.write("<br>");
+        document.write(`Sorted Numbers: ${sortedNumbers}`);
+        document.write("<br>");
+        document.write(`Mean: ${mean}`);
+        document.write("<br>");
+        document.write(`Median: ${median}`);
+    </script>
+</body>
+
+</html>
